@@ -235,6 +235,10 @@ body {
     align-items: center;
 }
 
+.menutext {
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
     .container {
       width: 100%;
@@ -271,92 +275,68 @@ body {
     .padded {
         padding: 5rem;
     }
-    .sub-menu-wrap {
-        display: none;
-    }
 
     @media screen and (max-width: 840px) {
         .navigation {
             display: none;
         }
-        .sub-menu-wrap {
-            display: none;
+
+        .menutext {
+            display: list-item;
+
         }
-        .sub-menu-wrap.show {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            z-index: 999;
-            text-align: center;
-        }
-        .sub-menu-wrap.show .sub-menu-link {
-            display: block;
-        }
-      
-        .sub-menu-wrap {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-      
-        .sub-menu {
-            display: flex;
-            flex-wrap: wrap;
-      }
-      
-        .sub-menu .sub-menu-link {
-            display: none;
-            padding: 1rem;
-            text-align: center;
-        }
-      
-        .all-items {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-      
-        .all-items a {
-            margin: 0 1rem;
-            color: #ffffff;
-            font-size: 1rem;
-            text-decoration: none;
-        }
-        .all-items i {
-            margin: 0 1rem;
-            color: #ffffff;
-            font-size: 1rem;
-            text-decoration: none;
-        }
-      
-        .all-items a:hover {
-            color: #bdbdbd;
-        }
-      
-        #menubutton {
-            color: #ffffff;
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-        }
-      
-        #menubutton:hover {
-            color: #bdbdbd;
+        .dropdown ul {
+            background: rgba(0, 0, 0, 0);
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
         }
 
-        /* hide the dropdown menu by default */
-        .all-items {
+        .dropdown li {
+            color: #fff;
+          background: rgba(0, 0, 0, 0);
+            display: block;
+            float: left;
+            padding: 1rem;
+            position: relative;
+            text-decoration: none;
+          transition-duration: 0.5s;
+        }
+        .dropdown li a {
+            color: #fff;
+        }
+
+        .dropdown li:hover,
+        .dropdown li:focus-within {
+	        background: rgba(255, 255, 255, 0.359);
+	        cursor: pointer;
+        }
+
+        .dropdown ul li ul {
+            background: rgba(255, 255, 255, 1);
+            visibility: hidden;
+            opacity: 0;
+            width: 5rem;
+            position: absolute;
+            transition: all 0.5s ease;
+            margin-top: 1rem;
+            left: 0;
             display: none;
         }
-    
-        /* show the dropdown menu when the button is clicked */
-        .sub-menu-wrap + .all-items.active {
-            display: block;
+
+        .menubutton ul li:hover > ul,
+        .menubutton ul li:focus-within > ul,
+        .menubutton ul li ul:hover,
+        .menubutton ul li ul:focus {
+            visibility: visible;
+            opacity: 1;
+            display: block
         }
+
+        .dropdown ul li ul li {
+            clear: both;
+          width: 100%;
+        }
+
     }
 }
