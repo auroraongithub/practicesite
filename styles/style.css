@@ -14,7 +14,6 @@
 
 header {
     position: fixed;
-    overflow: hidden;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 100;
     backdrop-filter: blur(10px);
 }
 
@@ -72,7 +71,6 @@ a:hover {
 .logo {
     font-size: 2em;
     color: #fff;
-    user-select: none;
 }
 
 .navigation a{
@@ -240,6 +238,22 @@ body {
     display: none;
 }
 
+.mobilenav #toggleDark2{
+  display: none;
+}
+
+.menutext {
+  display: none;
+}
+
+.dropdown {
+  display: none;
+}
+
+#menubutton{
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
     .container {
       width: 100%;
@@ -264,15 +278,6 @@ body {
       position: relative;
     }
 
-    .navigation i{
-        font-size: 1.1em;
-        cursor: pointer;
-        position: absolute;
-        top: 28px;
-        margin-left: 40px;
-        color: white;
-    }
-
     .padded {
         padding: 5rem;
     }
@@ -282,9 +287,31 @@ body {
           display: none;
         }
 
-        body i {
-          color: white; 
+        .mobilenav #toggleDark2{
+          display: block;
         }
+
+        .navigation i{
+          display: none;
+      }
+
+        #menubutton{
+          display: block;
+        }
+
+        header i {
+          flex-direction: row;
+          color: white;
+        }
+
+        .mobilenav #toggleDark2{
+          font-size: 1.1em;
+          cursor: pointer;
+          position: absolute;
+          top: 30px;
+          margin-left: 100px;
+          color: white;
+      }
 
         #menubutton{
           color: #fff;
@@ -313,27 +340,51 @@ body {
           z-index: 9999;
         }
 
+        .dropdown i {
+          margin-left: 20px;
+          margin-bottom: 30px;
+        }
+
+        .dropdown a {
+          text-decoration: none;
+          color: white;
+          margin-top: 10px;
+          transition: 0.2s;
+        }
+
+        .dropdown a:hover  {
+          text-decoration: none;
+          color: rgb(170, 170, 170);
+        }
+
+        .menutext ul {
+          list-style-type: none;
+          color: white;
+        }
+
         .menutext:hover .dropdown {
           display: block;
+          margin-top: auto;
+          background-color: #000000;
+          font-size: 1.2rem;
         }
 
         .menutext:hover .dropdown ul {
           display: block;
-          margin: 10px;
         }
 
         .menutext:hover .dropdown ul li {
           display: block;
-          width: 150px;
-          padding: 10px;
+          width: 100px;
         }
         .menutext ul li:hover .dropdown ul {
           display: block;
-          margin: 10px;
+          margin-top: 10px;
+          margin-left: 10px;
         }
         .menutext ul li:hover .dropdown ul li {
-          width: 150px;
-          padding: 10px;
+          width: 100px;
+          height: 40px;
         }
     }
 }
