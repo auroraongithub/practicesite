@@ -114,12 +114,14 @@ a:hover {
 
 .projects {
     margin-left: -15px;
+    display: flex;
+    flex-wrap: wrap;
     /* align section w/ heading above */
   }
-  
+
   .projects a {
     /* 30px is the gutter size in magic grid */
-    width: calc(49% - 30px);
+    width: calc(50% - 1px);
     /* 49% avoids a weird single column on some wide screens */
     display: flex;
     color: black;
@@ -127,7 +129,8 @@ a:hover {
   }
   
   .projects section {
-    width: 100%;
+    vertical-align: top;
+    width: 80%;
     padding: 2.5vh 5%;
     margin: 1vh 0px;
     display: inline-block;
@@ -216,7 +219,8 @@ body {
   }
 
 .padded2 {
-    padding: 5rem;
+    padding-top: 10px;
+    padding-left: 5rem;
   }
   
 .about-img {
@@ -239,6 +243,10 @@ body {
 }
 
 .mobilenav #toggleDark2{
+  display: none;
+}
+
+.mobilenav{
   display: none;
 }
 
@@ -291,9 +299,13 @@ body {
           display: block;
         }
 
+        .mobilenav{
+          display: block;
+        }
+
         .navigation i{
           display: none;
-      }
+        }
 
         #menubutton{
           display: block;
